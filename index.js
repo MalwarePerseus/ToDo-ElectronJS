@@ -26,6 +26,10 @@ function createAddWindow() {
 	addWindow.loadFile('./addTodo.html')
 }
 
+ipcMain.on('todo:add', (event, todo) =>{
+	mainWindow.webContents.send('todo:add:toMain',todo);
+});
+
 const menuTemplate = [
 	{
 		label: 'File',
