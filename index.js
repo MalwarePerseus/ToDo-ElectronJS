@@ -64,7 +64,8 @@ if (process.env.NODE_ENV !== 'production') {
 				label: 'Dev Tools',
 				click(item, focusedWindow) {
 					focusedWindow.toggleDevTools();
-				}
+				},
+				accelerator:process.platform ==='darwin' ? 'Command+Alt+I' : 'Ctrl+Shift+I',
 			}
 		]
 	});
