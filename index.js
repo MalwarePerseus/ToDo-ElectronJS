@@ -7,7 +7,7 @@ let addWindow;
 app.on('ready', ()=>{
 	mainWindow = new BrowserWindow({
 		webPreferences : {
-			nodeIntigration: true	
+			nodeIntegration: true	
 		} 
 		});
 	mainWindow.loadFile('./main.html')
@@ -21,7 +21,10 @@ function createAddWindow() {
 	addWindow = new BrowserWindow({
 		width: 300,
 		height: 200,
-		title:'Add New Todo'
+		title:'Add New Todo',
+		webPreferences : {
+			nodeIntegration: true	
+		} 
 	});
 	addWindow.loadFile('./addTodo.html')
 	addWindow.on('closed', () => addWindow = null);
