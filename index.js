@@ -69,6 +69,7 @@ if (process.env.NODE_ENV !== 'production') {
 	menuTemplate.push({
 		label: 'DEV',
 		submenu: [
+			{ role: 'reload'},
 			{
 				label: 'Dev Tools',
 				click(item, focusedWindow) {
