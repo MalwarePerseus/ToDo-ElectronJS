@@ -1,5 +1,5 @@
 const electron = require('electron');
-const {app, BrowserWindow, ipcMain, Menu} = electron;
+const {app, BrowserWindow, ipcMain, Menu, ipcRenderer} = electron;
 
 let mainWindow;
 let addWindow;
@@ -46,7 +46,15 @@ const menuTemplate = [
 					}
 			},
 
-			{ label: 'Quit',
+			{
+				label: 'Clear Todos',
+				click() {
+					mainWindow.webContents.send('todo:clear')
+				}
+			},
+
+			{ 
+				label: 'Quit',
 				accelerator: process.platform === 'darwin' ? 'Command+Q' : 'Ctrl+Q', 
 				// accelerator: (() => {
 				// 	if (process.platform === 'darwin') {
@@ -79,4 +87,4 @@ if (process.env.NODE_ENV !== 'production') {
 			}
 		]
 	});
-}
+}  
