@@ -27,6 +27,6 @@
   },
   "homepage": "https://github.com/MalwarePerseus/ToDo-ElectronJS#readme",
   "dependencies": {
-    "electron": "^9.0.0"
+    "electron": "^13.6.6"
   }
 }
